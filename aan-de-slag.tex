@@ -1,0 +1,603 @@
+\chapter{Aan de slag}
+\label{ch:aan-de-slag}
+
+\section{Studiewijzer}
+
+De studiewijzer geeft een overzicht van de belangrijkste informatie over deze cursus, o.a.~leerdoelen, lesmateriaal, weekplanning en leeraanwijzingen. Lees alles aandachtig door!
+
+\subsection{Doel en plaats van de cursus in het curriculum}
+
+Deze cursus is een inleiding op wat tegenwoordig vaak \emph{data science} genoemd wordt. Het doel is om je wegwijs te maken in het correct verzamelen, verwerken en analyseren van numerieke data en daar een onderzoeksverslag over te schrijven.
+
+In de eerste plaats is dit een voorbereiding op de bachelorproef, waar je deze technieken in de praktijk zal moeten omzetten. Maar ook na je afstuderen blijft de kennis die je in deze cursus opdoet waardevol. Succesvolle bedrijven nemen beslissingen, niet op basis van buikgevoel of intuïtie, maar door het verzamelen van data. Aan de hand van de technieken die hier toegelicht worden, heb je voldoende achtergrond om vragen te beantwoorden als:
+
+\begin{itemize}
+  \item Is een (web)applicatie snel genoeg voor de gebruikers? Is de gebruikerservaring consistent, of zit er grote variatie op responstijden?
+  \item Welk van twee systemen (software of hardware) is het meest performant? Is het verschil tussen beide significant, of kunnen verschillen in de metingen te wijten zijn aan het toeval?
+  \item Wanneer moeten aankopen van nieuwe apparatuur (bv.~harde schijven, servers, geheugen, enz.) ingepland worden, op basis van historische gebruiksgegevens?
+\end{itemize}
+
+\subsection{Leerdoelen en competenties}
+
+\begin{itemize}
+  \item Kan begrippen, formules, stellingen en de uitwerking ervan uit de beschrijvende en inductieve statistiek benoemen en verklaren
+  \item Kan formules, stellingen uit de beschrijvende en inductieve statistiek in onderzoeksvraagstukken correct toepassen
+  \item Kan data analyseren met statistische software
+  \item Kan een gestructureerd wetenschappelijk document schrijven en voorzien van referenties in \LaTeX{}
+  \item Kan de wetenschappelijke methode vergelijken met niet-wetenschappelijke onderzoeksmethodes en daarbij voor- en nadelen opsommen 
+\end{itemize}
+
+Deze vind je ook terug in de studiefiche.
+
+\subsection{Leerinhoud}
+
+Verder in dit hoofdstuk vind je instructies voor het installeren van de nodige software, en een korte inleiding op het werken met R, een programmeertaal voor data-analyse.
+
+Hoofdstuk~\ref{ch:onderzoeksproces} geeft een inleiding op het verloop van een typisch onderzoeksproces en introduceert enkele basisconcepten van data-analyse.
+
+Hoofdstuk~\ref{ch:analyse1var} behandelt de analyse van een enkele variabele, meer bepaald centrum- en spreidingsmaten, en ook geschikte grafiektypes voor elk soort variabelen.
+
+Hoofdstuk~\ref{ch:steekproefonderzoek} introduceert het concept van het nemen van steekproeven uit een populatie, en de randvoorwaarden waaronder resultaten binnen een steekproef kunnen veralgemeend worden tot de gehele populatie.
+
+Hoofdstuk~\ref{ch:toetsingsprocedures} gaat hierop verder met de algemene werkwijze voor het voeren van statistische toetsen, en specifiek met toetsen voor uitspraken over het gemiddelde van een populatie: de $z$-toets en de $t$-toets.
+
+Waar de vorige hoofdstukken telkens één variabele apart beschouwden, bekijkt Hoofdstuk~\ref{ch:analyse2var} verschillende technieken om verbanden tussen twee variabelen te leggen, afhankelijk van het variabeletype.
+
+Hoofdstuk~\ref{ch:chikwadraat} introduceert de $\chi^2$-toets, waarmee je kan nagaan of de verdeling van een steekproef relevant is voor een populatie, of in hoeverre twee steekproeven een gelijkaardige verdeling hebben.
+
+Hoofdstuk~\ref{ch:tijdreeksen} geeft een inleiding op het analyseren van hoe de waarde van een variabele evolueert in de tijd aan de hand van wiskundige modellen die onder bepaalde voorwaarden ook toelaten om voorspellingen te doen.
+
+\subsection{Leermateriaal}
+
+Het belangrijkste leermateriaal voor dit opleidingsonderdeel is deze cursus, die ook de oefeningenopgaven bevat. Die wordt ter beschikking gesteld via Chamilo als PDF. Op Chamilo vind je ook de PDF's met de slides gebruikt tijdens de lessen.
+
+Daarnaast krijgen studenten toegang tot een GitHub-repository met de broncode voor:
+
+\begin{itemize}
+  \item Deze cursus
+  \item De slides van lessen
+  \item Broncodevoorbeelden in R voor alle technieken die in de cursus aan bod komen.
+\end{itemize}
+
+\textbf{Errata en wijzigingen} aan de cursus worden in GitHub aangebracht. De PDF's op Chamilo zullen niet noodzakelijk bijgewerkt worden. Studenten kunnen zelf de laatste versies van alle documenten met \LaTeX{} genereren.
+
+De software die nodig is voor dit opleidingsonderdeel is gratis/open source. Instructies voor de installatie kan je vinden in Sectie~\ref{sec:installatie-software}.
+
+\subsection{Werkvormen}
+
+\textbf{Studenten afstandsleren} kunnen vragen stellen tijdens de contactmomenten. Dit zijn echter geen lesmomenten! Het rooster vind je in de Chamilo-cursus ``Informatie voor studenten TILE.''
+
+\textbf{Studenten dagonderwijs} krijgen één uur per week hoorcollege en twee uur werkcollege.
+
+\subsection{Werk- en leeraanwijzingen}
+
+Het opleidingsonderdeel \emph{Onderzoekstechnieken} wordt door veel studenten als moeilijk ervaren. Dat is begrijpelijk, want het onderwerp ligt dan ook buiten de comfortzone van de doorsnee informatica-student en we weten allemaal dat wiskundige vakken niet de populairste van onze opleiding zijn.
+
+Er zijn twee manieren om hier mee om te gaan. Je kan de weg van de minste weerstand nemen: je concentreren op de vakken die je graag doet en een dag voor het examen de cursus doornemen in de hoop dat je voldoende punten bij elkaar sprokkelt om een tien te halen. De ervaring leert dat deze strategie niet succesvol is, wat blijkt uit het lage slagingspercentage in de eerste zittijd (in academiejaar 2016-2017 was dat ca. 35\% voor het dagonderwijs en 10\% voor afstandsleren).
+
+Enkele tips om wél meteen te slagen voor dit vak:
+
+\begin{itemize}
+  \item Kom naar de theorieles en \emph{neem actief nota's};
+  \item Werk ook voor dit vak \emph{buiten de contactmomenten}. Herhaal de geziene theorie en werk oefeningen af waarmee je nog niet klaar was. Noteer zaken die je niet snapt of waar je vast zit, en stel je vraag bij het eerstvolgende werkcollege.
+  \item Gebruik goede \emph{leertechnieken}. Je vindt een goed overzicht van leertechnieken waarvan het effect wetenschappelijk aangetoond is via de website van \emph{The Learning Scientists}\footnote{\url{http://www.learningscientists.org/}}.
+  \begin{itemize}
+    \item \emph{Spaced practice:} Studeer in meerdere kleine sessies (minstens één keer per week) en niet in grote blokken. Blokkeer een vast moment in je weekagenda/lesplanning.
+    \item \emph{Retrieval practice:} Neem een leeg blad papier en probeer zoveel mogelijk zaken over een bepaald onderwerp op te schrijven vanuit je herinnering (dus zonder in de cursus te kijken). Controleer dit daarna aan de hand van je lesnota's en in de cursus.
+    \item \emph{Elaboration:} Stel jezelf vragen over hoe dingen (bv. formules, toetsingsprocedures, \ldots) in elkaar zitten en waarom dat zo is. Overleg met medestudenten. Vraag je lector om meer uitleg indien nodig. Leg verbanden tussen verschillende onderwerpen in de cursus (bv. vergelijk toetsingsprocedures).
+    \item \emph{Interleaving:} Wissel onderwerpen af tijdens het studeren.
+    \item Gebruik \emph{concrete voorbeelden} om abstracte ideeën te begrijpen. In de cursus worden voorbeelden gegeven, probeer er zelf te bedenken. Overleg met medestudenten en vraag eventueel feedback aan je lector.
+    \item \emph{Dual coding:} Combineer woord en beeld, probeer de leerstof die je instudeert visueel voor te stellen.
+  \end{itemize}
+\end{itemize}
+
+Uiteindelijk komt het er op neer dat je voldoende tijd en inspanning investeert om te studeren voor dit vak.
+
+\subsection{Studiebegeleiding en planning}
+
+Studenten \textbf{afstandsleren} die vragen hebben over de leerstof kunnen in de eerste plaats terecht op het forum in Chamilo. Wanneer je een oefening gemaakt hebt en twijfelt over de correcte oplossing, kan je de lector per mail contacteren. Zet dan in de onderwerpregel ``[OZT][TILE]''. Deze mails worden niet dagelijks beantwoord, dus het kan even duren voordat je reactie krijgt.
+
+Studenten \textbf{dagonderwijs} kunnen vragen stellen tijdens de werkcolleges, of ook op het forum.
+
+In Tabel~\ref{tab:weekplanning} vind je een overzicht van de lesplanning voor het dagonderwijs die ook als leidraad kan dienen voor de studieplanning van studenten afstandsleren.
+
+\begin{table}
+  \begin{center}
+    \begin{tabular}{cll}
+       \hline
+       \textbf{Week} & \textbf{Theorie}     & \textbf{Oefeningen}            \\
+       \hline
+       1  & Intro, Onderzoeksproces         & Software installeren, \LaTeX{} \\
+       2  & Analyse van 1 variabele         & Wetenschappelijk schrijven     \\
+       3  & Steekproefonderzoek             & Analyse van 1 variabele        \\
+       4  & Steekproefonderzoek             & Steekproefonderzoek            \\
+       5  & Toetsingsprocedures ($z$-toets) & Steekproefonderzoek            \\
+       6  & Toetsingsprocedures ($t$-toets) & Toetsingsprocedures            \\
+       7  & Analyse van 2 variabelen        & Toetsingsprocedures            \\
+      --- & \textbf{Paasvakantie}           & ---                            \\
+       8  & Analyse van 2 variabelen        & Analyse van 2 variabelen       \\
+       9  & $\chi^2$-toets                  & Analyse van 2 variabelen       \\
+      10  & Tijdreeksen                     & $\chi^2$-toets                 \\
+      11  & Toelichting bachelorproef       & Tijdreeksen                    \\
+      12  & Herhaling                       & Herhaling                      \\
+      \hline
+    \end{tabular}
+    \caption[Weekplanning]{Weekplanning van de cursus.}
+    \label{tab:weekplanning}
+  \end{center}
+\end{table}
+
+\subsection{Evaluatie}
+
+\textbf{Dagonderwijs}
+
+\begin{itemize}
+  \item Eerste examenperiode:
+  \begin{itemize}
+    \item 70\% periodegebonden evaluatie: schriftelijk examen, bestaande uit een deel gesloten boek (theorie) en een deel met voorbereiding op pc (oefeningen)
+    \item 30\% niet-periodegebonden evaluatie: het voeren van een mini-onderzoek in groep, bestaande uit een literatuurstudie, opzetten van een reproduceerbaar experiment, verzamelen van meetgegevens en die statistisch analyseren, en er een verslag over schrijven
+  \end{itemize}
+  \item Tweede examenperiode:
+  \begin{itemize}
+    \item 70\% periodegebonden evaluatie: schriftelijk examen, bestaande uit een deel gesloten boek (theorie) en een deel met voorbereiding op pc (oefeningen)
+    \item 30\% niet-periodegebonden evaluatie: er wordt geen tweede examenkans georganiseerd voor dit onderdeel. Wanneer een student in de eerste examenkans niet geslaagd was voor de opdracht blijft de beoordeling voor deze evaluatievorm of de afwezigheid voor deze evaluatievorm geldig voor de tweede examenkans.
+  \end{itemize}
+\end{itemize}
+
+\textbf{Afstandsleren}
+
+\begin{itemize}
+  \item Eerste examenperiode:
+  \begin{itemize}
+    \item 70\% periodegebonden evaluatie: schriftelijk examen, bestaande uit een deel gesloten boek (theorie) en een deel met voorbereiding op pc (oefeningen)
+    \item 30\% niet-periodegebonden evaluatie: individuele opdracht, schrijven van een paper
+  \end{itemize}
+  \item Tweede examenperiode:
+  \begin{itemize}
+    \item 70\% periodegebonden evaluatie: schriftelijk examen, bestaande uit een deel gesloten boek (theorie) en een deel met voorbereiding op pc (oefeningen)
+    \item 30\% niet-periodegebonden evaluatie: er wordt geen tweede examenkans georganiseerd voor dit onderdeel. Wanneer een student in de eerste examenkans niet geslaagd was voor de opdracht blijft de beoordeling voor deze evaluatievorm of de afwezigheid voor deze evaluatievorm geldig voor de tweede examenkans.
+  \end{itemize}
+\end{itemize}
+
+\section{Installatie software}
+\label{sec:installatie-software}
+
+Voor de cursus onderzoekstechnieken maak je gebruik van verschillende softwarepakketten. Hier vind je wat uitleg over de installatie en hoe je er mee aan de slag kan.
+
+\begin{itemize}
+  \item Git client (versiebeheersysteem);
+  \item \LaTeX{} compiler;
+  \item \LaTeX{} editor;
+  \item Jabref (bibliografische databank);
+  \item R (statistische analysesoftware);
+  \item Rstudio (IDE voor R).
+\end{itemize}
+
+Sommige van deze applicaties nemen veel schijfruimte in, dus zorg dat je voldoende ruimte vrij hebt.
+
+In vele andere cursussen rond statistiek of onderzoekstechnieken wordt gebruik gemaakt van commerciële software: SPSS of SAS voor data-analyse, MS Office voor de opmaak van documenten. In deze cursus wordt er expliciet voor gekozen om open source of gratis software te gebruiken. Het grootste voordeel is dat je die ook na je afstuderen nog kan gebruiken zonder dat jij of je bedrijf/organisatie softwarelicenties moet aankopen.
+
+Bovendien zijn de tools die we zullen gebruiken kwalitatief minstens even goed dan hun commerciële tegenhangers. R, een programmeertaal voor statistische analyse, wordt wereldwijd gebruikt in academische én professionele context. Volgens de TIOBE-index\footcite{\url{https://www.tiobe.com/tiobe-index/}} zit R intussen bijna in de top-10 van alle programmeertalen en de taal zit sinds een vijftal jaar in een vrij sterk stijgende trend. De kans is dus niet onbestaande dat je het in je professionele loopbaan nog zal tegenkomen, of het zal kunnen toepassen voor het oplossen van datagerelateerde problemen. Feedback die we kregen van oud-studenten bevestigt dit.
+
+\LaTeX{} is een markuptaal en tekstzetsysteem voor de professionele vormgeving van documenten. De bedoeling is dat de auteur zich vooral moet bezig houden met het logisch structureren van een tekst, en dat het vormgeven op papier wordt overgenomen door de software. Het aanleren van de markuptaal vraagt wat inspanning, maar het is een investering die rendeert wanneer je een lang document (zoals een scriptie) op een professionele, strakke manier wil opmaken. Er zijn in het verleden nog zelden of nooit bachelorproeven ingediend die in MS Word geschreven waren en die een voldoende goede opmaak hadden. Het lijkt veel eenvoudiger om een tekst op te stellen in Word, maar het is zo goed als onmogelijk om in een lang document een consistente en professioneel ogende opmaak te realiseren.
+
+\subsection{Windows}
+
+Omdat het hier toch gaat om een vrij groot aantal applicaties, kunnen Windows-gebruikers beter gebruik maken van de Chocolatey package manager\footnote{\url{https://chocolatey.org/}} in plaats van alles manueel te downloaden en installeren.
+
+Na installatie van Chocolatey\footnote{\url{https://chocolatey.org/install}}, voer je volgende commando's uit als Administrator in een CMD of PowerShell terminal:
+
+\begin{verbatim}
+choco install -y git
+choco install -y miktex
+choco install -y texstudio
+choco install -y JabRef
+choco install -y r.project
+choco install -y r.studio
+\end{verbatim}
+
+Wie toch de ``klassieke'' werkwijze wil hanteren vindt hier de verschillende softwarepakketten:
+
+\begin{itemize}
+  \item Git client: \url{https://git-scm.com/download/win}
+  \item \LaTeX{} compiler: \url{https://miktex.org/download}
+  \item TeXStudio: \url{http://www.texstudio.org/}
+  \item Jabref: \url{https://www.fosshub.com/JabRef.html}
+  \item R: \url{https://lib.ugent.be/CRAN/}
+  \item Rstudio: \url{https://www.rstudio.com/products/rstudio/download/#download}
+\end{itemize}
+
+\subsection{macOS}
+
+macOS gebruikers installeren de nodige software best via de Homebrew\footnote{\url{https://brew.sh/}} package manager\footnote{\textbf{Let op!} Deze werkwijze is nog niet getest. Feedback van Mac-gebruikers is welkom!}:
+
+\begin{verbatim}
+brew install git
+brew cask install mactex
+brew cask install texstudio
+brew cask install jabref
+brew install Caskroom/cask/xquartz
+brew install --with-x11 r
+brew cask install --appdir=/Applications rstudio
+\end{verbatim}
+
+Wie toch alles manueel wil installeren kan de applicaties hier downloaden:
+
+\begin{itemize}
+  \item Git client: \url{https://git-scm.com/download/mac}
+  \item \LaTeX{} compiler: \url{https://www.tug.org/mactex/mactex-download.html}
+  \item TeXStudio: \url{http://www.texstudio.org/}
+  \item Jabref: \url{https://www.fosshub.com/JabRef.html}
+  \item R: \url{https://lib.ugent.be/CRAN/}
+  \item Rstudio: \url{https://www.rstudio.com/products/rstudio/download/#download}
+\end{itemize}
+
+\subsection{Linux}
+
+Op RStudio na zijn alle nodige softwarepakketten beschikbaar in de repositories van de meest gebruikte Linux-distributies. We geven hier command-line instructies voor enerzijds Ubuntu (Xenial/16.04) en Debian 9 en anderzijds Fedora.
+
+\paragraph{Ubuntu/Debian} 
+
+Controleer eerst de link naar de laatste versie van RStudio via de website.
+
+\begin{verbatim}
+sudo aptitude update
+sudo aptitude install texlive-latex-base texlive-latex-extra \
+  texlive-lang-european texlive-bibtex-extra texlive-extra-utils \
+  biber git texstudio jabref r-base
+wget https://download1.rstudio.org/rstudio-xenial-1.1.414-amd64.deb
+sudo dpkg -i ./rstudio-xenial-1.1.414-amd64.deb
+\end{verbatim}
+
+\paragraph{Fedora}
+
+Controleer eerst de link naar de laatste versie van RStudio via de website. Dit is één lang commando:
+
+\begin{verbatim}
+sudo dnf install git texstudio R \
+  java-1.8.0-openjdk-openjfx texlive-collection-latex \
+  texlive-texliveonfly texlive-babel-dutch \
+  https://download1.rstudio.org/rstudio-1.1.414-x86_64.rpm
+\end{verbatim}
+
+Je kan JabRef ook installeren vanuit de Fedora package repository, maar dan krijg je een verouderde versie. Je kan dan beter de ``Platform Independent Runnable Jar'' downloaden via de projectwebsite\footnote{\url{https://jabref.org/}}. Die kan je dan opstarten vanuit de shell met het commando (hier voorbeeld voor versie 4.1):
+
+\begin{verbatim}
+java -jar JabRef-4.1.jar
+\end{verbatim}
+
+\section{Configuratie}
+
+\subsection{Git, GitHub}
+
+Wellicht heb je Git al geconfigureerd voor enkele van je andere vakken. Kijk eventueel alles nog eens na! Als alles ok is, kan je deze sectie overslaan.
+
+\emph{Wij raden aan om Git via de command line te gebruiken.} Zo krijg je het beste inzicht in de werking. Het commando \texttt{git status} geeft op elk moment een goed overzicht van de toestand van je lokale repository en geeft aan met welk commando je een stap verder kan zetten of de laatste stap ongedaan kan maken.
+
+Als je nog geen GitHub-account hebt, kies dan een gebruikersnaam die je na je afstuderen nog kan gebruiken (dus bv.~niet je HoGent login). De kans is erg groot dat je tijdens je carrière nog van GitHub gebruik zult maken. Koppel ook je HoGent-emailadres aan je GitHub account (je kan meerdere adressen registreren). Op die manier kan je aanspraak maken op het GitHub Student Developer Pack\footnote{\url{https://education.github.com/pack}}, wat je gratis toegang geeft tot een aantal in principe betalende producten en diensten.
+
+Windows-gebruikers voeren volgende instructies uit via Git Bash, macOS- en Linux-gebruikers via de standaard (Bash) terminal.
+
+\begin{verbatim}
+git config --global user.name 'Pieter Stevens'
+git config --global user.email 'pieter.stevens.u12345@student.hogent.be'
+git config --global push.default simple
+\end{verbatim}
+
+Maak ook een SSH-sleutel aan om het synchroniseren met GitHub te vereenvoudigen (je moet dan geen wachtwoord meer opgeven bij push/pull van/naar een private repository).
+
+\begin{verbatim}
+ssh-keygen
+\end{verbatim}
+
+Volg de instructies op de command-line, druk gewoon ENTER als je gevraagd wordt een wachtwoordzin (pass phrase) in te vullen. In de home-directory van je gebruiker (bv. \verb|c:\Users\Pieter| op Windows, \verb|/Users/pieter| op Mac, \verb|/home/pieter| op Linux) is nu een directory met de naam .ssh/ aangemaakt met twee bestanden: \verb|id_rsa| (je private key) en \verb|id_rsa.pub| (je public key). Open dit laatste bestand met een teksteditor en kopieer de volledige inhoud naar het klembord. Ga vervolgens naar je GitHub profiel en kies in het menu links voor SSH and GPG keys. Klik rechtsboven op de groene knop met ``New SSH Key'' en plak de inhoud van je publieke sleutel in het veld ``Key''. Bevestig je keuze.
+
+Test nu of je de code van de cursus Onderzoekstechnieken kan downloaden. Ga in de Bash shell naar een directory waar je dit project lokaal wil bijhouden en voer uit:
+
+\begin{verbatim}
+git clone git@github.com:HoGentTIN/onderzoekstechnieken-cursus.git
+\end{verbatim}
+
+Als dit lukt, is er nu een directory aangemaakt met dezelfde naam als de repository. Doe tijdens het semester regelmatig \texttt{git pull} om de laatste wijzigingen in het cursusmateriaal bij te werken. Pas zelf geen bestanden aan binnen deze repository, dit zal leiden tot conflicten.
+
+\subsection{TeXstudio}
+
+Controleer deze instellingen via menu-item \emph{Options > Configure TeXstudio}:
+
+\begin{itemize}
+  \item Build
+  \begin{itemize}
+    \item Default Compiler: pdflatex
+    \item Default Bibliography tool: biber
+  \end{itemize}
+  \item Editor:
+  \begin{itemize}
+    \item Indentation mode: Indent and Unindent Automatically
+    \item Replace Indentation Tab by Spaces: Aanvinken
+    \item Replace Tab in Text by spaces: Aanvinken
+    \item Replace Double Quotes: English Quotes: \verb|``''|
+  \end{itemize}
+
+\end{itemize}
+
+Om te testen of TeXstudio goed werkt, kan je het bestand \texttt{cursus/cursus-onderzoekstechnieken.tex} openen. Kies \emph{Tools > Build \& View} (of druk F5) om de cursus te compileren in een PDF-bestand.
+
+Veel functionaliteiten van \LaTeX{} zitten in aparte packages die niet noodzakelijk standaard geïnstalleerd zijn. De eerste keer dat je een bestand compileert, is het dan ook mogelijk dat er extra packages moeten gedownload worden. MiK\TeX{} zal een pop-up tonen om je toestemming te vragen, bevestig dit. Op Linux is het mogelijk dat je deze packages nog manueel moet installeren. De eerste keer compileren kan enkele minuten duren zonder dat je feedback krijgt over wat er gebeurt. Even geduld, dus!
+
+Indien er zich fouten voordoen bij de compilatie, kan je onderaan in het tabblad Log een overzicht krijgen van de foutboodschappen.
+
+\subsection{JabRef}
+
+JabRef\footnote{\url{http://www.jabref.org/}} is een GUI voor het bewerken van Bib\TeX{}-bestanden, een soort database van bronnen uit de wetenschappelijke- of vakliteratuur voor een \LaTeX{}-document.
+
+Kies in het menu voor \emph{File > Switch to BibLaTeX} mode. Dit maakt de bestandsindeling van de bibliografische databank compatibel met dat van de cursus en het aangeboden \LaTeX{}-sjabloon voor de bachelorproef.
+
+Kies in het \emph{Preferences}-venster voor de categorie \emph{File} en geef een directory op voor het bijhouden van PDFs van de gevonden bronnen onder \emph{Main file directory}. Het is heel interessant om alle gevonden artikels te downloaden en onder die directory bij te houden. Nog beter is om als naam van het bestand de Bib\TeX{} key te nemen (typisch naam van de eerste auteur + jaartal, bv. \texttt{Knuth1998.pdf}). Je kan het bestand dan makkelijk openen vanuit JabRef.
+
+Voor meer gedetailleerde informatie over het bijhouden van bibliografische referenties, zie de bachelorproefgids~\autocite{VanVreckem2017}.
+
+
+\section{Gebruik van R}
+
+R is een softwareprogramma voor datamanipulatie, berekening en het grafisch voorstellen van data. Het heeft onder meer:
+
+\begin{enumerate}
+  \item een effectieve gegevensbeheer- en opslagfaciliteit,
+  \item een reeks operatoren voor berekeningen op arrays, in het bijzonder matrices,
+  \item een grote verzameling van instrumenten voor data-analyse,
+  \item grafische faciliteiten voor data-analyse en weergave en
+  \item een goed ontwikkelde, eenvoudige en effectieve programmeertaal (genaamd 'S').
+\end{enumerate}
+
+R heeft een ingebouwde hulpfaciliteit die vergelijkbaar is met die van UNIX man-pages. Voor meer informatie over elke specifieke functie, bijvoorbeeld \texttt{solve}, kan je volgende commando oproepen
+
+\begin{lstlisting}
+> help (solve)
+\end{lstlisting}
+
+Een alternatief is
+\begin{lstlisting}
+> ?solve
+\end{lstlisting}
+
+\subsection{Commando's opslaan en output uitvoeren}
+
+Als de commando's in een extern bestand worden opgeslagen, bv. \texttt{commands.R} in de werkmap, dan kunnen deze op elk moment uitgevoerd worden in een R-sessie met de opdracht
+
+\begin{lstlisting}
+> source ("commands.R")
+\end{lstlisting}
+
+De functie \texttt{sink},
+
+\begin{lstlisting}
+> sink ("record.lis")
+\end{lstlisting}
+
+Zal alle volgende uitvoer van de console naar een extern bestand, \texttt{record.lis}, wegschrijven. Het bevel
+
+\begin{lstlisting}
+> sink()
+\end{lstlisting}
+
+Herstelt de output opnieuw naar de console.
+
+\subsection{R omgeving en workspace}
+
+De entiteiten die R creëert en manipuleert staan bekend als objecten. Deze kunnen variabelen zijn, arrays
+van cijfers, reeksen, functies of meer algemene structuren die uit dergelijke componenten zijn gebouwd.
+Tijdens een R-sessie worden objecten gemaakt en opgeslagen op naam. Het R commando
+
+\begin{lstlisting}
+> objects()
+\end{lstlisting}
+
+geeft een overzicht van alle objecten die gemaakt zijn tot op dat moment.
+De verzameling van objecten die momenteel zijn opgeslagen, heet de werkruimte.
+Om objecten te verwijderen is de functie \texttt{rm} beschikbaar:
+
+\begin{lstlisting}
+> rm (x, y, z, inkt, junk, temp, foo, bar)
+\end{lstlisting}
+
+Alle objecten die tijdens een R-sessie zijn aangemaakt, kunnen permanent in een bestand worden opgeslagen voor gebruik in de toekomstige
+R sessies. Als u aangeeft dat u dit wilt doen, worden de objecten geschreven naar een bestand met extensie \texttt{.RData}
+
+In dit hoofdstuk onderzoeken we hoe je een dataset definieert in R. Er worden slechts twee commando's onderzocht. De eerste is voor het eenvoudig toewijzen van gegevens, en de tweede is voor het lezen in een databestand. Er zijn verschillende manieren om gegevens in een R-sessie te lezen, maar we richten ons op slechts twee om het eenvoudig te houden.
+
+\subsection{Toewijzing}
+
+De meest directe manier om een lijst met nummers op te slaan is via een opdracht met behulp van het \texttt{c}-commando. (C staat voor "combineren.") Het idee is dat een lijst met nummers onder een bepaalde naam wordt opgeslagen, en de naam wordt gebruikt om te verwijzen naar de gegevens. Een lijst wordt gespecificeerd met de opdracht \texttt{c}, en de toewijzing wordt geduid met de symbolen "<-". Een andere term die gebruikt wordt om de lijst met nummers te omschrijven is \texttt{vector}.
+
+De cijfers binnen de \texttt{c}-opdracht worden gescheiden door komma's. Als voorbeeld kunnen we een nieuwe variabele maken, genaamd "\texttt{x}".
+
+\begin{lstlisting}
+> x <- c(10.4, 5.6, 3.1, 6.4, 21.7)
+\end{lstlisting}
+
+Wanneer je dit commando invoert, mag je geen uitvoer zien behalve een nieuwe opdrachtregel. Het commando maakt een lijst met nummers genaamd "x". Om te zien welke elementen zijn opgenomen in x, typ zijn naam en druk op de enter-toets.
+
+Als u met één van de nummers wilt werken, kunt u hier toegang krijgen tot de variabele en vervolgens vierkante haakjes noteren die aangeven welk nummer u wilt beschouwen:
+
+\begin{lstlisting}
+> x[2]
+[1] 5.6
+\end{lstlisting}
+
+\subsection{Een csv file lezen}
+
+We gaan ervan uit dat het gegevensbestand een csv bestand is: "komma-gescheiden waarden" (csv). Dat wil zeggen, elke regel bevat een rij met waarden die getallen of letters kunnen zijn, en elke waarde wordt gescheiden door een komma. We gaan ervan uit dat de eerste rij een lijst met labels bevat. Het idee is dat de labels in de bovenste rij gebruikt worden om te verwijzen naar de verschillende variabelen per rij.
+
+Het commando om het gegevensbestand te lezen is \texttt{read.csv}. We moeten tenminste één argument geven aan de opdracht.
+
+\begin{exercise}
+  Ga met het help commando na wat de parameters zijn van het commando. Probeer daarna het bestand \texttt{computers.csv} in te lezen. 
+\end{exercise}
+
+Als u niet zeker bent welke bestanden in de huidige werkmap zitten, kunt u het commando \texttt{dir} gebruiken om een lijst van bestanden weer te geven. Het \texttt{getwd} commando gebruikt u om de huidige werkmap te bepalen.
+
+Het databestand komt uit de publicatie van \autocite{Stengos2005}. Deze dataset bevat data van 1993 tot 1995 over de prijzen van computers. Je kan nagaan wat het effect van de toevoeging van cd-rom-station is op de prijs van de computer of  het effect van de kloksnelheid op de prijs. 
+
+\begin{lstlisting}
+> dir()
+[1] "breakingbad.csv"  "Desktop"          "Documents"        "Downloads"        "dumps"            "earch php-"       "examples.desktop"
+[8] "f.r"              "kids.csv"         "kmissles.csv"     "kmissles.ods"     "Music"            "out.pdf"          "Pictures"        
+[15] "public"           "Public"           "R"                "Templates"        "test"             "test.php"         "Videos"          
+> getwd()
+[1] "/home/eothein"
+\end{lstlisting}
+
+Als u niet zeker weet welke kolommen gedefinieerd zijn, kunt u \texttt{names()} gebruiken:
+
+\begin{lstlisting}
+> names(computers)
+[1] "price"   "speed"   "hd"      "ram"     "screen"  "cd"      "multi"   "premium" "ads"     "trend"
+\end{lstlisting}
+
+Wanneer u het commando \texttt{read.csv} gebruikt, gebruikt R een specifiek soort variabele, dat een dataframe heet. Alle gegevens worden opgeslagen in het dataframe als afzonderlijke kolommen. Als u niet zeker weet wat voor variabele u hebt, dan kunt u de opdracht \texttt{attributes} gebruiken. Hiermee worden alle dingen vermeld die R gebruikt om de variabele te beschrijven:
+
+\begin{lstlisting}
+attributes(computers)
+$names
+[1] "price"   "speed"   "hd"      "ram"     "screen"  "cd"      "multi"   "premium" "ads"     "trend"  
+
+$class
+[1] "tbl_df"     "tbl"        "data.frame"
+
+$row.names
+[1]    1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16   17   18   19   20   21   22   23   24   25   26   27
+[28]   28   29   30   31   32   33   34   35   36   37   38   39   40   41   42   43   44   45   46   47   48   49   50   51   52   53   54
+...
+[ reached getOption("max.print") -- omitted 5259 entries ]
+
+$spec
+cols(
+price = col_integer(),
+speed = col_integer(),
+hd = col_integer(),
+ram = col_integer(),
+screen = col_integer(),
+cd = col_character(),
+multi = col_character(),
+premium = col_character(),
+ads = col_integer(),
+trend = col_integer()
+)
+
+\end{lstlisting}
+
+\subsection{Data types}
+
+We kijken naar enkele manieren waarop R gegevens kan opslaan en organiseren. Dit is echter een inleiding dus beschouwen we maar een kleine subset van de verschillende datatypes die door R worden herkend. 
+
+\subsubsection{Numbers}
+
+De meest eenvoudige manier om een nummer op te slaan is om een variabele van een enkel getal te nemen:
+
+\begin{lstlisting}
+> a <- 3
+>
+\end{lstlisting}
+
+Hiermee kunt u allerlei basisoperaties doen en opslaan:
+
+\begin{lstlisting}
+> b <- sqrt(a*a+3)
+> b
+[1] 3.464102
+\end{lstlisting}
+
+Als u een lijst met nummers wilt initialiseren, kan het \texttt{numeric} commando worden gebruikt. Om bijvoorbeeld een lijst van 10 nummers te maken, gebruikt u de volgende opdracht. Je kan ook kijken naar het type van de variabele.
+
+\begin{lstlisting}
+> a <- numeric(10)
+> a
+[1] 0 0 0 0 0 0 0 0 0 0
+> typeof(a)
+[1] "double"
+\end{lstlisting}
+
+\subsubsection{Strings}
+
+Een tekenreeks wordt gespecificeerd door gebruik te maken van aanhalingstekens. Zowel enkelvoudige als dubbele aanhalingstekens zullen werken:
+
+\begin{lstlisting}
+> a <- "hello"
+> a
+[1] "hello"
+> b <- c("hello","there")
+> b
+[1] "hello" "there"
+> b[1]
+[1] "hello"
+\end{lstlisting}
+
+\subsubsection{Factors}
+
+Vaak bevat een experiment proeven voor verschillende niveaus van een  verklarende variabele. Bijvoorbeeld een nominale variabele die gecodeerd wordt met een integer. De verschillende niveaus worden ook factoren genoemd.
+
+Je geeft aan dat een variabele een factor is met behulp van het \texttt{factor} commando. 
+
+\subsubsection{Data frames}
+
+Data kan worden opgeslagen aan de hand van dataframes. Dit is een manier om verschillende vectoren van verschillende types te nemen en ze op te slaan in dezelfde variabele. De vectoren kunnen van alle soorten zijn. Een dataframe kan bijvoorbeeld verschillende vectoren bevatten en elke lijst kan een vector zijn van factoren, strings of nummers.
+
+Er zijn verschillende manieren om gegevensframes te maken en te manipuleren. De meeste zijn buiten het bereik van deze introductie. Ze worden hier alleen genoemd om een meer volledige beschrijving te geven. 
+
+\lstinputlisting{data/dataframe.R}
+
+\subsubsection{Logische variabelen}
+
+Een ander belangrijk gegevenstype is het logische type. Er zijn twee vooraf gedefinieerde variabelen, \texttt{TRUE} en \texttt{FALSE}.
+
+\subsubsection{Tables}
+
+Een andere  manier om informatie op te slaan is in een tabel.  We kijken alleen maar naar het maken en defini\"eren van tabellen. 
+
+\lstinputlisting{data/tables.R}
+Als je rijen wilt toevoegen aan uw tabel, voeg dan nog een vector toe als argument van de tabelopdracht. In het onderstaande voorbeeld hebben wij twee vragen. In de eerste vraag staan de reacties  'Nooit', 'Soms' of 'Altijd'. In de tweede vraag staan de reacties 'Ja', 'No' of 'Maybe'. De set van vectoren 'a', en 'b' bevatten het antwoord voor elke meting. Het derde punt in 'a' is hoe de derde persoon op de eerste vraag reageerde en het derde punt in 'b' is hoe de derde persoon op de tweede vraag reageerde.
+
+\lstinputlisting{data/twotables.R}
+
+\subsubsection{Matrix}
+
+Een matrix is een verzameling van gegevens die zijn aangebracht in een tweedimensionale rechthoekige indeling. Een voorbeeld van een matrix is bijvoorbeeld als volgt:
+
+\[
+\begin{bmatrix}
+2 & 3 \\ 
+4 & 5  
+\end{bmatrix}
+\]
+
+\lstinputlisting{data/matrix.R}
+
+\section{Oefeningen}
+
+\begin{exercise}
+  Bekijk de dataset mtcars. Geef de waarde terug voor de eerste rij, tweede kolom. Geef ook het aantal rijen, het aantal kolommen. Geef ook een preview van het volledige data frame. Geef enkel de kolom terug met de definities van de cylinders. Om een data frame te bekomen met de twee kolommen mpg en hp, pakken we de kolomnamen in een indexvector in met single square bracket operator. Probeer ook eens op te zoeken hoe je een rijrecord van de ingebouwde data set mtcars bepaalt.
+\end{exercise}
+
+\begin{exercise}
+  Maak zelf een willekeurige datafile aan in Excel en probeer deze in te lezen in R. Zijn er nog dataformaten die ondersteund worden door R?
+\end{exercise}
+
+\begin{exercise}
+  Genereer een $4x5$ array en noem die $x$. Geneer daarna een $3x2$ array waar de eerste kolom de rij-index kan zijn van $x$ en de tweede kolom een kolomindex voor $x$. Vervang de elementen gedefinieerd door de index in $i$ in $x$ door 0. 
+\end{exercise}
+
+\begin{exercise}
+  Genereer een vector waar een voornaam en een achternaam in komen. Benoem ook de naam van de kolommen. Geef daarna ook voornaam terug van het eerste element van de array. 
+\end{exercise}
+
+\begin{exercise}
+  Probeer voor de datafile \texttt{rainforest} in de library \texttt{DAAG} te tellen hoeveel rijen er zijn per species die volledig en compleet zijn (dus geen n.a. bevatten). Je kan hiervoor \texttt{with, table, complete.cases} voor gebruiken. 
+\end{exercise}
+
+\begin{exercise}
+	Genereer een vector met de waarden $e^x cos(x)$ voor $x= 3, 3.1, 3.2, \dots ,6$
+\end{exercise}
+
+\begin{exercise}
+	Bereken: $\sum_{i}^{100}(i^3 + 4i^2)$
+\end{exercise}
